@@ -1,6 +1,6 @@
 package com.apirest.facturacionrest.dto;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class FacturaDTO {
@@ -10,7 +10,7 @@ public class FacturaDTO {
     private Double totalSinImpuestos;
     private Double totalImpuestos;
     private Double totalConImpuestos;
-    private LocalDate fecha;
+    private Date fecha;
 
     public Long getId() {
         return id;
@@ -32,8 +32,8 @@ public class FacturaDTO {
         return detalles;
     }
 
-    public void setDetalles(List<DetalleFacturaDTO> detalles) {
-        this.detalles = detalles;
+    public void setDetalles(List<DetalleFacturaDTO> detalleFacturaDTOs) {
+        this.detalles = detalleFacturaDTOs;
     }
 
     public Double getTotalSinImpuestos() {
@@ -60,7 +60,11 @@ public class FacturaDTO {
         this.totalConImpuestos = totalConImpuestos;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
